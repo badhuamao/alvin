@@ -1,0 +1,97 @@
+name: Update v2rayN Subscription
+
+# Triggers:
+#   1. Schedule: every 6 hours (UTC 00:00, 06:00, 12:00, 18:00)
+#   2. Manual: workflow_dispatch
+#   3. On push to scripts/ or workflow file (for testing changes)
+on:
+  schedule:
+    - cron: '0 0,6,12,18 * * *'
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+# Allow the workflow to push back to the repo
+permissions:
+  contents: write
+
+concurrency:
+  group: update-subscription
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate subscription files
+        run: python scripts/generate_subscription.py
+
+      - name: Show generated files
+        run: |
+          echo "=== Files in subscribe/ ==="
+          ls -lh subscribe/
+          echo ""
+          echo "=== meta.json (summary) ==="
+          python3 -c "
+          import json
+          d = json.load(open('subscribe/meta.json'))
+          print(f'Generated at      : {d[\"generated_at\"]}')
+          print(f'Wiki URIs         : {d[\"total_uris_from_wiki\"]}')
+          print(f'Clash proxies     : {d[\"total_clash_proxies\"]}')
+          ok = sum(1 for s in d['sources'] if s['status']=='ok')
+          fail = sum(1 for s in d['sources'] if s['status']=='fail')
+          print(f'Sources OK / FAIL : {ok} / {fail}')
+          print()
+          print('Sources breakdown:')
+          for s in d['sources']:
+              tag = '[OK]  ' if s['status']=='ok' else '[FAIL]'
+              if s['type'] == 'wiki':
+                  print(f'  {tag} wiki         {s[\"source\"]:25s}  URIs: {s.get(\"uri_count\",0)}')
+              else:
+                  print(f'  {tag} gitlab-ip    {s[\"source\"]:25s}  proxies: {s.get(\"proxy_count\",0)}  via {s.get(\"via\",\"?\")}')
+          "
+          echo ""
+          echo "=== First 5 URIs (v2rayn.txt) ==="
+          head -5 subscribe/v2rayn.txt
+          echo ""
+          echo "=== First 3 proxies (clash.yaml) ==="
+          grep -A 6 "^  - name:" subscribe/clash.yaml | head -25
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add subscribe/
+          if git diff --cached --quiet; then
+            echo "No changes since last run - skipping commit."
+          else
+            git commit -m "🔄 Update v2rayN subscription ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+            git push
+            echo "Pushed successfully."
+          fi
+
+      - name: Fail-safe summary
+        if: always()
+        run: |
+          echo "## Subscription Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f subscribe/meta.json ]; then
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            cat subscribe/meta.json >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No meta.json produced - generation failed." >> $GITHUB_STEP_SUMMARY
+          fi
