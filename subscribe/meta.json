@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30 16:18:53 (UTC+8)",
+  "generated_at": "2026-07-30 21:49:48 (UTC+8)",
   "total_uris_from_wiki": 4,
   "total_clash_proxies": 25,
   "sources": [
@@ -129,7 +129,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/shadowquic/2/client.yaml",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/shadowquic/2/client.yaml",
       "proxy_count": 0,
-      "via": "backup",
+      "via": "primary",
       "status": "ok"
     },
     {
@@ -192,7 +192,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/hysteria/3/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/hysteria/3/config.json",
       "proxy_count": 1,
-      "via": "backup",
+      "via": "primary",
       "status": "ok"
     },
     {
@@ -228,7 +228,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/naiveproxy/1/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/naiveproxy/1/config.json",
       "proxy_count": 1,
-      "via": "backup",
+      "via": "primary",
       "status": "ok"
     },
     {
