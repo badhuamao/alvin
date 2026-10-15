@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15 05:14:32 (UTC+8)",
+  "generated_at": "2026-10-15 10:59:13 (UTC+8)",
   "total_uris_from_wiki": 3,
   "total_clash_proxies": 26,
   "sources": [
@@ -39,7 +39,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/quick/2/config.yaml",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/quick/2/config.yaml",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -48,7 +48,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/quick/3/config.yaml",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/quick/3/config.yaml",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -84,7 +84,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/clash.meta2/3/config.yaml",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/clash.meta2/3/config.yaml",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -102,7 +102,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/clash.meta2/5/config.yaml",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/clash.meta2/5/config.yaml",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -111,7 +111,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/clash.meta2/6/config.yaml",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/clash.meta2/6/config.yaml",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -129,7 +129,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/shadowquic/2/client.yaml",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/shadowquic/2/client.yaml",
       "proxy_count": 0,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -147,7 +147,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/hysteria2/2/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/hysteria2/2/config.json",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -201,7 +201,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/hysteria/4/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/hysteria/4/config.json",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -210,7 +210,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/juicity/1/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/juicity/1/config.json",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -255,7 +255,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/mieru/2/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/mieru/2/config.json",
       "proxy_count": 0,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -264,7 +264,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/singbox/1/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/singbox/1/config.json",
       "proxy_count": 0,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -273,7 +273,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/singbox/2/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/singbox/2/config.json",
       "proxy_count": 0,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     },
     {
@@ -309,7 +309,7 @@
       "url": "https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ip/xray/4/config.json",
       "backup_url": "https://www.67867867.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ip/xray/4/config.json",
       "proxy_count": 1,
-      "via": "primary",
+      "via": "backup",
       "status": "ok"
     }
   ]
